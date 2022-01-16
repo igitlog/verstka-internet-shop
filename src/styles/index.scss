@@ -1,0 +1,480 @@
+@import "fonts";
+@import "global";
+
+// header start
+.header {
+  z-index: 4;
+  background-color: $accentColor;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  box-shadow: 0 0 2px;
+  &__container {
+    padding: 0px 20px;
+    display: flex;
+    flex-direction: column;
+
+    .category {
+      font-family: OpenSans-SemiBold;
+      font-size: 24px;
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 37px;
+    }
+    .search {
+      padding: 27px 0px;
+      display: flex;
+      &__img {
+        position: absolute;
+        padding: 16px 0 0 16px;
+        color: #ddd;
+      }
+      &__input {
+        font-family: OpenSans-Regular;
+        font-size: 14px;
+        flex: 1px;
+        padding: 0px 15px 0px 50px;
+        min-width: 219px;
+        min-height: 52px;
+        border-radius: 50px;
+        border: 1px solid #d6d6d6;
+      }
+    }
+  }
+}
+// header end
+// media header start
+@media (min-width: 768px) {
+  .header {
+    &__container {
+      padding: 0px 26px 0 98px;
+
+      .category {
+        font-size: 28px;
+      }
+      .search {
+
+        &__input {
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .header {
+    &__container {
+      padding: 20px 60px 0px 280px;
+
+      .category {
+        font-size: 28px;
+        justify-content: flex-start;
+      }
+      .search {
+
+        &__input {
+        }
+      }
+    }
+  }
+}
+// media header end
+
+// sidebar start
+
+.sidebar {
+  z-index: 10;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: -182px;
+  &__container {
+    display: flex;
+    flex-direction: row;
+    .sidebar__content {
+      background-color: #f3f4f9;
+      min-width: 192px;
+      height: 100vh;
+      padding-top: 40px;
+      .logo {
+        display: flex;
+        align-items: center;
+        padding-left: 20px;
+        &__img {
+        }
+        &__text {
+          font-family: Poppins;
+          font-size: 14px;
+          padding-left: 5px;
+        }
+      }
+      .sidebar__body {
+        padding-top: 47px;
+        .navigate {
+          &__item {
+            display: flex;
+            align-items: center;
+            margin: 20px 0 22px;
+            padding-left: 20px;
+            padding-right: 11px;
+            .item__img {
+              display: none;
+              padding-right: 12px;
+              cursor: pointer;
+              &:hover {
+                filter: invert(45%) sepia(79%) saturate(2410%)
+                  hue-rotate(163deg) brightness(97%) contrast(102%);
+              }
+            }
+            .item__name {
+              cursor: pointer;
+              font-family: OpenSans-SemiBold;
+              font-size: 16px;
+            }
+            &:hover {
+              border-left: 2px solid #34abe0;
+              color: #34abe0;
+              .item__img {
+                filter: invert(45%) sepia(79%) saturate(2410%)
+                  hue-rotate(163deg) brightness(97%) contrast(102%);
+              }
+            }
+          }
+        }
+      }
+    }
+    .sidebar__button {
+      width: 48px;
+      height: 106px;
+      background-image: url(/src/img/Sidebar/SidebarButton/Union.svg);
+
+      .burger__container {
+        cursor: pointer;
+        padding-left: 10px;
+        padding-top: 42px;
+        img {
+          &:hover {
+            filter: invert(45%) sepia(79%) saturate(2410%) hue-rotate(163deg)
+              brightness(97%) contrast(102%);
+          }
+        }
+      }
+    }
+  }
+}
+// sidebar end
+// media sidebar start
+@media (min-width: 768px) {
+  .sidebar {
+    left: -121px;
+    &__container {
+      .sidebar__content {
+        .logo {
+          &__img {
+            padding-left: 130px;
+          }
+          &__text {
+            display: none;
+          }
+        }
+        .sidebar__body {
+          .navigate {
+            &__item {
+              display: flex;
+              justify-content: flex-end;
+              .item__img {
+                display: block;
+              }
+              .item__name {
+                display: none;
+              }
+            }
+          }
+        }
+      }
+      .sidebar__button {
+        .burger__container {
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .sidebar {
+    left: 0;
+    &__container {
+      .sidebar__content {
+        min-width: 240px;
+        .logo {
+          &__img {
+            padding-left: 20px;
+            img {
+              width: 50px;
+            }
+          }
+          &__text {
+            display: inline;
+            font-size: 16px;
+            padding-left: 10px;
+          }
+        }
+        .sidebar__body {
+          .navigate {
+            &__item {
+              justify-content: start;
+              padding-left: 40px;
+              .item__img {
+              }
+              .item__name {
+                display: inline;
+              }
+            }
+          }
+        }
+      }
+      .sidebar__button {
+        display: none;
+        .burger__container {
+        }
+      }
+    }
+  }
+}
+// media sidebar end
+// main start
+.main {
+  padding-top: 169px;
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 32px;
+    padding-right: 20px;
+    padding-top: 20px;
+    .coupon {
+      box-shadow: 0px 0px 10px #e3e3e3;
+      display: flex;
+      justify-content: space-between;
+      border-radius: 10px;
+      min-width: 250px;
+      margin: 7px;
+      background-color: $accentColor;
+
+      .coupon-triagles {
+        width: 0;
+        &:before {
+          content: "";
+          display: block;
+          z-index: 2;
+          position: relative; /* Позиционирование */
+          height: 1px;
+          left: -28px;
+          bottom: -55px; /* Положение треугольника */
+          border: 10px solid transparent; /* Прозрачные границы */
+          border-left: 10px solid #f1f1f1; /* Добавляем треугольник */
+        }
+        &:after {
+          content: "";
+          z-index: 3;
+          display: block;
+          position: relative; /* Позиционирование */
+          height: 1px;
+          left: 205px;
+          bottom: -34px; /* Положение треугольника */
+          border: 10px solid transparent; /* Прозрачные границы */
+          border-right: 10px solid #f1f1f1; /* Добавляем треугольник */
+        }
+      }
+
+      &__about {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        padding: 16px 0px 16px 0px;
+        
+        .title-coupon {
+          padding-bottom: 22px;
+
+          &__restorate-name {
+            font-family: Roboto-Bold;
+            font-size: 12px;
+            line-height: 16px;
+            font-weight: bold;
+          }
+
+          &__coupon-name {
+            font-family: Roboto-Regular;
+            font-size: 12px;
+            line-height: 16px;
+          }
+        }
+        .promo {
+          &__discription {
+            font-family: Roboto-Medium;
+            font-size: 28px;
+            font-weight: 500;
+            line-height: 24px;
+            color: red;
+          }
+
+          &__name {
+            font-family: Roboto-Regular;
+            font-size: 12px;
+            line-height: 16px;
+            letter-spacing: 0.4em;
+          }
+        }
+      }
+
+      &__img {
+        margin-right: -27px;
+        img {
+          border-radius: 10px;
+        }
+      }
+      &:hover {
+        border: 1px solid #df212d;
+        .coupon__img {
+          img {
+            border-radius: 10px;
+          }
+        }
+        &:before {
+          content: "";
+          z-index: 2;
+          position: relative; /* Позиционирование */
+          height: 1px;
+          left: -1px;
+          bottom: -55px; /* Положение треугольника */
+          border: 10px solid transparent; /* Прозрачные границы */
+          border-left: 10px solid red; /* Добавляем треугольник */
+
+        }
+        &:after {
+          content: "";
+          z-index: 2;
+          position: relative; /* Позиционирование */
+          height: 1px;
+          left: 1px;
+          bottom: -55px; /* Положение треугольника */
+          border: 10px solid transparent; /* Прозрачные границы */
+          border-right: 10px solid red; /* Добавляем треугольник */
+        }
+      }
+      &:before {
+        content: "";
+        z-index: 2;
+        position: relative; /* Позиционирование */
+        height: 1px;
+        left: -1px;
+        bottom: -55px; /* Положение треугольника */
+        border: 10px solid transparent; /* Прозрачные границы */
+        border-left: 10px solid white; /* Добавляем треугольник */
+      }
+      &:after {
+        content: "";
+        z-index: 2;
+        position: relative; /* Позиционирование */
+        height: 1px;
+        left: 1px;
+        bottom: -55px; /* Положение треугольника */
+        border: 10px solid transparent; /* Прозрачные границы */
+        border-right: 10px solid white; /* Добавляем треугольник */
+      }
+    }
+  }
+}
+
+// main end
+// media main start
+@media (min-width: 768px) {
+  .main {
+    padding-top: 170px;
+    &__container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 800px;
+      margin: auto;
+      margin-left: 104px;
+      .coupon {
+        margin: 10px;
+        .coupon-triagles {
+          width: 0;
+          &:before {
+            left: -29px;
+          }
+        }
+        &__about {
+          .title-coupon {
+            &__restorate-name {
+              font-size: 14px;
+            }
+
+            &__coupon-name {
+              font-size: 14px;
+            }
+          }
+          .promo {
+            &__discription {
+              font-size: 36px;
+              line-height: 28px;
+            }
+
+            &__name {
+              font-size: 16px;
+            }
+          }
+        }
+
+        &__img {
+        }
+      }
+    }
+  }
+}
+@media (min-width: 1440px) {
+  .main {
+    padding-top: 201px;
+    &__container {
+      margin-left: 240px;
+      max-width: 1000px;
+      .coupon {
+        .coupon-triagles {
+          width: 0;
+          &:before {
+
+            left: -23px;
+          }
+          &:after {
+
+            left: 211px;
+          }
+        }
+        &__about {
+          .title-coupon {
+            &__restorate-name {
+              font-size: 16px;
+            }
+
+            &__coupon-name {
+              font-size: 16px;
+            }
+          }
+          .promo {
+            &__discription {
+            }
+
+            &__name {
+            }
+          }
+        }
+
+        &__img {
+          margin-right: -21px;
+        }
+      }
+    }
+  }
+}
+// media main end
